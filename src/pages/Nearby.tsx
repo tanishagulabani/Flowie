@@ -69,12 +69,6 @@ export default function Nearby() {
     }
   };
 
-  const handleRefine = async () => {
-    if (!userLocation) return;
-    const { searchWithManualLocation: _, search } = useNearby();
-    await searchWithLocation(activeFilters);
-  };
-
   return (
     <div className="min-h-dvh pb-24" style={{ background: 'var(--surface)' }}>
       <div className="gradient-header px-4 pt-10 pb-5">

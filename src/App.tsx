@@ -33,6 +33,7 @@ function AppShell() {
         <Route path="/checkin" element={<CheckIn />} />
         <Route path="/insights" element={<Insights />} />
         <Route path="/nearby" element={<Nearby />} />
+        <Route path="/reminders" element={<Reminders />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

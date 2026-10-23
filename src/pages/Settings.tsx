@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { useTheme, Theme } from '../hooks/useTheme';
 import { exportAllData, deleteAllData } from '../utils/storage';
 import { generateDemoData } from '../utils/demoData';
 import { settingsStorage } from '../utils/storage';
-import { Sun, Moon, Monitor, Download, Trash2, Lock, Unlock, FlaskConical } from 'lucide-react';
+import { Sun, Moon, Monitor, Download, Trash2, Lock, Unlock, FlaskConical, Bell, ChevronRight } from 'lucide-react';
 
 export default function Settings() {
+  const navigate = useNavigate();
   const { theme, setTheme, enablePin, disablePin, pinEnabled, lockApp,
     loadCycles, loadCheckIns, loadReminders } = useApp();
   const [demoMode, setDemoMode] = useState(() => settingsStorage.get().demoMode);
@@ -80,6 +82,19 @@ export default function Settings() {
       </div>
 
       <div className="px-4 mt-4 flex flex-col gap-4 animate-in">
+        {/* Quick nav to Reminders */}
+        <button className="card card-sm" onClick={() => navigate('/reminders')} style={{ textAlign: 'left', cursor: 'pointer', width: '100%' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <div style={{ width: 40, height: 40, borderRadius: 12, background: 'var(--secondary-light)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Bell size={18} color="var(--secondary)" />
+            </div>
+            <div style={{ flex: 1 }}>
+              <p style={{ fontWeight: 700, fontSize: 14 }}>Reminders</p>
+              <p style={{ fontSize: 12, color: 'var(--text-secondary)', marginTop: 1 }}>Set up period, check-in & more</p>
+            </div>
+            <ChevronRight size={16} color="var(--text-secondary)" />
+          </div>
+        </button>
         {/* Appearance */}
         <div className="card">
           <h2 style={{ fontSize: 14, fontWeight: 700, color: 'var(--text-secondary)', marginBottom: 14, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
