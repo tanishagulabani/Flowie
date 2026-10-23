@@ -1,0 +1,24 @@
+{
+  "name": "Flowie — Women's Health Companion",
+  "short_name": "Flowie",
+  "description": "A simple, private women's health companion",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FEFAF8",
+  "theme_color": "#D4748C",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
