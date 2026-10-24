@@ -1,9 +1,9 @@
-import React from 'react';
+import type { ReactNode } from 'react';
 import { useApp } from '../context/AppContext';
 import { Bell, Droplets, Pill, Moon, Calendar } from 'lucide-react';
-import { ReminderType } from '../types';
+import type { ReminderType } from '../types';
 
-const ICONS: Record<ReminderType, React.ReactNode> = {
+const ICONS: Record<ReminderType, ReactNode> = {
   period: <Calendar size={20} color="var(--primary)" />,
   checkin: <Moon size={20} color="var(--secondary)" />,
   pill: <Pill size={20} color="var(--accent)" />,
@@ -18,7 +18,7 @@ const COLORS: Record<ReminderType, string> = {
 };
 
 export default function Reminders() {
-  const { reminders, toggleReminder, updateTime, scheduleNotification, notificationPermission } = useApp();
+  const { reminders, toggleReminder, updateTime, notificationPermission } = useApp();
 
   return (
     <div className="min-h-dvh pb-24" style={{ background: 'var(--surface)' }}>

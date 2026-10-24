@@ -1,9 +1,8 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { predictCycle } from '../utils/cyclePredictor';
 import { today, formatDisplay } from '../utils/dateHelpers';
-import { Calendar, Sparkles, MapPin, Bell, ChevronRight } from 'lucide-react';
+import { Sparkles, Bell, ChevronRight } from 'lucide-react';
 
 const MOOD_EMOJI: Record<string, string> = {
   rad: '😄', good: '🙂', meh: '😐', bad: '😔', awful: '😩',
@@ -18,7 +17,7 @@ export default function Home() {
   const todayCheckIn = checkIns.find(c => c.date === todayStr);
   const nextReminder = reminders.find(r => r.enabled);
 
-  const { daysUntilNextPeriod, cycleDay, nextPeriodStart, confidence } = prediction;
+  const { daysUntilNextPeriod, cycleDay, confidence } = prediction;
 
   const cyclePhrase = daysUntilNextPeriod === 0
     ? 'Period expected today'

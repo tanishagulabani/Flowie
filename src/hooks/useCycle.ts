@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
-import { CycleEntry } from '../types';
+import type { CycleEntry } from '../types';
 import { cycleStorage } from '../utils/storage';
-import { uid, today } from '../utils/dateHelpers';
+import { uid } from '../utils/dateHelpers';
 
 export function useCycle() {
   const [cycles, setCycles] = useState<CycleEntry[]>(() => cycleStorage.getAll());

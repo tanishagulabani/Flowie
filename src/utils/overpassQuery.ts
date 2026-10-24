@@ -1,4 +1,4 @@
-import { SupplyFilter } from '../types';
+import type { SupplyFilter } from '../types';
 
 // Map supply filter chips to OSM amenity/shop tags
 const FILTER_TAGS: Record<SupplyFilter, string[]> = {

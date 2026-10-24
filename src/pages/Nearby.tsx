@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useNearby } from '../hooks/useNearby';
 import { geocodeAddress } from '../utils/geocode';
 import { formatDistance } from '../utils/distance';
-import { NearbyPlace, SupplyFilter } from '../types';
+import type { NearbyPlace, SupplyFilter } from '../types';
 import { MapPin, Phone, Navigation, Search, Loader } from 'lucide-react';
 
 // Fix leaflet default icon issue with bundlers

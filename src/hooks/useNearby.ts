@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { NearbyPlace, SupplyFilter } from '../types';
+import type { NearbyPlace, SupplyFilter } from '../types';
 import { buildOverpassQuery } from '../utils/overpassQuery';
 import { haversineDistance } from '../utils/distance';
 

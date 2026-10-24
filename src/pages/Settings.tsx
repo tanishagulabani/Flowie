@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import type { ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
-import { useTheme, Theme } from '../hooks/useTheme';
+import type { Theme } from '../hooks/useTheme';
 import { exportAllData, deleteAllData } from '../utils/storage';
 import { generateDemoData } from '../utils/demoData';
 import { settingsStorage } from '../utils/storage';
@@ -69,7 +70,7 @@ export default function Settings() {
     setPinSetup('idle'); setPinInput(''); setPinConfirm(''); setPinError('');
   };
 
-  const themeOptions: { value: Theme; icon: React.ReactNode; label: string }[] = [
+  const themeOptions: { value: Theme; icon: ReactNode; label: string }[] = [
     { value: 'light', icon: <Sun size={16} />, label: 'Light' },
     { value: 'dark', icon: <Moon size={16} />, label: 'Dark' },
     { value: 'system', icon: <Monitor size={16} />, label: 'System' },

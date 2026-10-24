@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useApp } from '../context/AppContext';
 import { predictCycle } from '../utils/cyclePredictor';
 import { diffDays } from '../utils/dateHelpers';
@@ -131,7 +131,7 @@ export default function Insights() {
                 <YAxis tick={axisStyle} domain={['auto', 'auto']} />
                 <Tooltip
                   contentStyle={{ background: 'var(--surface-card)', border: '1px solid var(--border)', borderRadius: 12, fontSize: 13 }}
-                  formatter={(v: number) => [`${v} days`, 'Cycle length']}
+                  formatter={(v: unknown) => [`${v as number} days`, 'Cycle length']}
                 />
                 <Line type="monotone" dataKey="days" stroke={chartColor} strokeWidth={2.5} dot={{ r: 4, fill: chartColor }} />
               </LineChart>
@@ -153,7 +153,7 @@ export default function Insights() {
                 <YAxis tick={axisStyle} domain={[1, 5]} tickFormatter={(v: number) => MOOD_LABEL[v] ?? ''} />
                 <Tooltip
                   contentStyle={{ background: 'var(--surface-card)', border: '1px solid var(--border)', borderRadius: 12, fontSize: 13 }}
-                  formatter={(v: number) => [MOOD_LABEL[v] ?? v, 'Mood']}
+                  formatter={(v: unknown) => { const n = v as number; return [MOOD_LABEL[n] ?? n, 'Mood']; }}
                 />
                 <Line type="monotone" dataKey="score" stroke="#B9A0C4" strokeWidth={2.5} dot={{ r: 3, fill: '#B9A0C4' }} />
               </LineChart>
@@ -175,7 +175,7 @@ export default function Insights() {
                 <YAxis tick={axisStyle} domain={[0, 3]} />
                 <Tooltip
                   contentStyle={{ background: 'var(--surface-card)', border: '1px solid var(--border)', borderRadius: 12, fontSize: 13 }}
-                  formatter={(v: number) => [v.toFixed(1), 'Avg severity']}
+                  formatter={(v: unknown) => [(v as number).toFixed(1), 'Avg severity']}
                 />
                 <Bar dataKey="avg" radius={[6, 6, 0, 0]}>
                   {crampData.map((_, i) => (

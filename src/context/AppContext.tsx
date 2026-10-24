@@ -1,8 +1,10 @@
-import React, { createContext, useContext, ReactNode } from 'react';
+import { createContext, useContext } from 'react';
+import type { ReactNode } from 'react';
 import { useCycle } from '../hooks/useCycle';
 import { useCheckIn } from '../hooks/useCheckIn';
 import { useReminders } from '../hooks/useReminders';
-import { useTheme, Theme } from '../hooks/useTheme';
+import { useTheme } from '../hooks/useTheme';
+import type { Theme } from '../hooks/useTheme';
 import { useAppLock } from '../hooks/useAppLock';
 
 interface AppContextType {

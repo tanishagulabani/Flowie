@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
 import { today } from '../utils/dateHelpers';
-import { MoodType, CrampLevel, EnergyLevel } from '../types';
+import type { MoodType, CrampLevel, EnergyLevel } from '../types';
 import { CheckCircle } from 'lucide-react';
 
 const MOODS: { value: MoodType; emoji: string; label: string }[] = [

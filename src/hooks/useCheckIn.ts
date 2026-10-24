@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { CheckIn, MoodType, CrampLevel, EnergyLevel } from '../types';
+import type { CheckIn, MoodType, CrampLevel, EnergyLevel } from '../types';
 import { checkInStorage } from '../utils/storage';
 import { uid, today } from '../utils/dateHelpers';
 

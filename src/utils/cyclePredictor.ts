@@ -1,5 +1,5 @@
-import { CycleEntry, PredictionResult } from '../types';
-import { addDays, diffDays, toISODate, today } from './dateHelpers';
+import type { CycleEntry, PredictionResult } from '../types';
+import { addDays, diffDays, today } from './dateHelpers';
 
 const DEFAULT_CYCLE = 28;
 const DEFAULT_PERIOD = 5;

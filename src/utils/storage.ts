@@ -1,4 +1,4 @@
-import { CycleEntry, CheckIn, Reminder } from '../types';
+import type { CycleEntry, CheckIn, Reminder } from '../types';
 
 const KEYS = {
   cycles: 'flowie_cycles',

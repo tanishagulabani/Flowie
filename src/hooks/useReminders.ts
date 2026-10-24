@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { Reminder, ReminderType } from '../types';
+import type { Reminder } from '../types';
 import { reminderStorage } from '../utils/storage';
 import { uid } from '../utils/dateHelpers';
 

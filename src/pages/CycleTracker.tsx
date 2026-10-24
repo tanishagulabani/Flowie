@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { predictCycle, getDayType } from '../utils/cyclePredictor';
@@ -36,7 +36,7 @@ export default function CycleTracker() {
     }),
   ];
 
-  const { daysUntilNextPeriod, cycleDay, averageCycleLength, nextPeriodStart, confidence } = prediction;
+  const { daysUntilNextPeriod, cycleDay, averageCycleLength, confidence } = prediction;
 
   return (
     <div className="min-h-dvh pb-24" style={{ background: 'var(--surface)' }}>

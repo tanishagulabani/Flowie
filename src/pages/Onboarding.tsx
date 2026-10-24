@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { onboardingStorage } from '../utils/storage';
 
 interface Props {
